@@ -36,11 +36,11 @@
         
         // This variable stores all the data.
         let data = 
-            '' + name.value + ' \r\n ' + 
-            '' +age.value + ' \r\n ' + 
-            '' + email.value + ' \r\n ' + 
-            '' + country.value + ' \r\n ' + 
-            '' + msg.value;
+            'Your name :' + name.value + ' \r\n ' + 
+            'Age :' +age.value + ' \r\n ' + 
+            'Email address' + email.value + ' \r\n ' + 
+            'you from' + country.value + ' \r\n ' + 
+            'you said :' + msg.value;
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
