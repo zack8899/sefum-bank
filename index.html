@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SINUP-FORM</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body> 
+	<div class="container">
+		<h2 class="title" style="color: blueviolet;"><i class="fa-regular fa-credit-card"></i>Sefum Bank</h2>
+		<p>please fill this form below to register</p>
+		<form>
+			<input type="text" name="firstname" placeholder="First Name" required id="first-name">
+			<input type="text" name="lastname" placeholder="Last Name" required id="last-name">
+			<input type="email" name="email" placeholder="Eg. example@gmail.com" required id="Email">
+			<input type="tel" name="tel" placeholder="Enter new card-no" required id="card-no">
+            <input type="password" name="password" placeholder="Password">
+			<input type="password" name="confirm-password" placeholder="Confirm Password" required id="password">
+
+			<div class="policy">
+			<input type="checkbox" name="checkbox">
+			<span>I accept the <a href="#"> Terms of use</a> & <a href="#"> privacy policy</a> </span></div>
+			<button type="sumbmit" onclick="saveFile()">Register</button>
+		</form>
+	</div>
+</body>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+    	const name = document.getElementById('first-name');
+        const age = document.getElementById('last-name');
+        const email = document.getElementById('Email');
+        const country = document.getElementById('card-no');
+        const msg = document.getElementById('password');
+        
+        // This variable stores all the data.
+        let data = 
+            '' + name.value + ' \r\n ' + 
+            '' +age.value + ' \r\n ' + 
+            '' + email.value + ' \r\n ' + 
+            '' + country.value + ' \r\n ' + 
+            '' + msg.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'bank_info.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+</html>
+</html>

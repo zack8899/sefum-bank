@@ -1,0 +1,86 @@
+ff0000
+
+*{
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+	font-family: 'Poppins'
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background:  #8a2be2;
+}
+.container{
+	display: flex;
+	/*align-items: center;*/
+	flex-direction: column;
+	width: 25em;
+	background: #ffff;
+	height: 30em;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 5px 25px ;
+}
+.container .title{
+	color: black;
+	bottom: 5px;
+	font-family: 'Poppins';
+	margin-top: 5px;
+	margin-bottom: 3px;
+	text-transform: capitalize;
+}
+
+form {
+	display: flex;
+	flex-flow: column nowrap;
+	text-align: center;
+}
+.title i{
+/*	display: flex;*/
+/*	flex-direction: row;*/
+	color: blueviolet;
+	margin-right: 5px;
+}
+h2{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: blueviolet;
+}
+
+.container p{
+	color: gray;
+}
+form input{
+	background: #d1d1d1;
+	border:none;
+	outline: none;padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+}
+form .checkbox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+form button{
+	margin: 5px;
+	border: none;
+	background: #8a2be2;
+	width: 6em;
+	padding: 10px;
+	border-radius: 6px;
+	color: #ffff;
+	text-transform: capitalize;
+
+}
+form button:hover{
+	cursor: pointer;
+}
+form button:active{
+	background: rgb(255,0,0);
+}
